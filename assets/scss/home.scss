@@ -1,0 +1,71 @@
+#body{
+    margin:0;
+    background-image: url("../images/Technician_Singgle-01_generated.jpg");
+    background-position:center; /* Center the image */
+    background-repeat: repeat; /* Do not repeat the image */
+    background-size:auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    #navbar{
+        background-color: grey;
+        margin-bottom: 10px;
+        .navItems{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: baseline;
+            margin:0px 5px;
+            padding: 0px 10px;
+            #user{
+                padding: 5px;
+            }
+        }
+    }
+    
+    #main-content{
+        flex:1;
+        #project-row{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .projects{
+            margin: 5px 0px;
+            padding: 10px;
+            transition: all 0.6s ease-in-out;
+            border: 1px solid grey;
+            background-color: rgba(38, 38, 38, 0.601);
+            border-radius: 20px;
+            color: black;
+        }
+        .projects:hover{
+             color: black;
+             background-color: rgba(207, 206, 206, 0.9);
+        }
+        .card{
+            transition: all 0.6s ease-in-out;
+        }
+        .card:hover{
+            color: white;
+            background-color: rgba(38, 38, 38, 0.7);
+        }
+        .modal{
+            color: black;
+        }
+        .project-footer-elements{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    #footer{
+        background-color: grey;
+        display:flex ;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 0px;
+    }
+}
+
+

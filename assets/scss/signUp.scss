@@ -1,0 +1,24 @@
+#sign-up-form-container{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: rgb(158, 158, 158);
+    #sign-up-form-row{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: flex-start;
+        justify-content: center;
+        #sign-up-link{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+    }
+}

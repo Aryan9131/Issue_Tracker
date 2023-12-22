@@ -1,0 +1,31 @@
+<!-- Details of items in Each list Issue -->
+<li style="border: 1px solid blue; margin:10px;">
+  <!-- Card container for issue details -->
+  <div class="card text-center">
+      <!-- Card header with issue name -->
+      <div class="card-header" style="background-color: rgb(205, 204, 204);">
+          Issue Name :- <%=issue.issue_name%>
+      </div>
+      <div class="card-body">
+          <!-- Card title with issue type -->
+          <h5 class="card-title">Issue Type :- <%=issue.issue_type%></h5>
+          <!-- Project name -->
+          <h6 class="card-text">Project Name :- <%=issue.project_id.project_name%>.</h6>
+          <!-- Issue description -->
+          <p class="card-text">Description :- <%=issue.description%>.</p>
+      </div>
+      <div class="card-footer text-body-secondary">
+          <!-- Delete button with a danger outline -->
+          <a href="/project/delete-issue/<%=issue._id%>" class="btn btn btn-outline-danger">Delete</a>
+          <!-- Timestamp -->
+          2 days ago
+          <!-- Edit button with a primary outline -->
+          <button type="button" class="btn btn btn-outline-primary" data-bs-toggle="modal"
+              data-bs-target="#issueEditModal_<%=issue.id%>">
+              Edit Issue
+          </button>
+          <!-- Include modal for issue editing -->
+          <%-include('_issueEditModal')-%>
+      </div>
+  </div>
+</li>

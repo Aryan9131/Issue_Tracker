@@ -1,0 +1,64 @@
+<!-- Button trigger Issue modal -->
+<button type="button" class="btn btn btn-outline-primary" data-bs-toggle="modal"
+    data-bs-target="#issueModal_<%=project.id%>">
+    <b>Create Issue</b>
+</button>
+
+<!-- Modal for creating an issue -->
+<div class="modal" id="issueModal_<%=project.id%>" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- Modal title -->
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Create Issue</h1>
+                <!-- Close button -->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <!-- Form to create a new issue -->
+                            <form action="/project/create-issue/<%=project.id%>" method="post">
+                                <!-- Input field for issue name -->
+                                <div class="form-floating mb-3">
+                                    <input type="text" name="issue_name" class="form-control" id="floatingInput"
+                                        placeholder="Issue Name">
+                                    <label for="floatingInput">Issue Name</label>
+                                </div>
+                                <!-- Dropdown for issue type -->
+                                <div class="mb-3">
+                                    <select name="issue_type" class="form-select" aria-label="Default select example">
+                                        <option selected>Issue type :</option>
+                                        <option value="Syntax Errors">Syntax Errors</option>
+                                        <option value="Logical Errors">Logical Errors</option>
+                                        <option value="Runtime Errors">Runtime Errors</option>
+                                        <option value="Compatibility Issues">Compatibility Issues</option>
+                                        <option value="Integration Issues">Integration Issues</option>
+                                        <option value="Deployment Issues">Deployment Issues</option>
+                                    </select>
+                                </div>
+                                <!-- Textarea for issue description -->
+                                <div class="form-floating mb-3">
+                                    <textarea name="description" class="form-control"
+                                        placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                                    <label for="floatingTextarea">Description</label>
+                                </div>
+                                <!-- Hidden field for project ID -->
+                                <div class="form-floating mb-3"><input type="hidden" name="project_id"
+                                        value="<%=project._id%>"></div>
+                                <!-- Submit button -->
+                                <input class="btn btn-primary" type="submit" value="Submit">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <!-- Close button for the modal -->
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

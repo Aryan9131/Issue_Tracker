@@ -1,0 +1,17 @@
+#body{
+    margin:0;
+    background-image: url("../images/vecteezy_operational-risk-vector-icon-design_20782369.jpg");
+    background-position:center; /* Center the image */
+    background-repeat:repeat-x; /* Do not repeat the image */
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#apply-filter-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

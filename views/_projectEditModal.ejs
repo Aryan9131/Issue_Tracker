@@ -1,0 +1,52 @@
+<!-- Modal Form to edit project -->
+<div class="modal" id="projectEditModal_<%=project.id%>" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+          <div class="modal-header">
+              <!-- Modal title for editing a project -->
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Project</h1>
+              <!-- Close button for the modal -->
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <div class="container-fluid">
+                  <div class="row">
+                      <div class="col-md-10">
+                          <!-- Form to edit the project -->
+                          <form action="/project/edit-project" method="post">
+                              <!-- Input field for author name -->
+                              <div class="form-floating mb-3">
+                                  <input type="text" name="author_name" class="form-control" id="floatingInput"
+                                      placeholder="Author Name">
+                                  <label for="floatingInput">Author Name</label>
+                              </div>
+                              <!-- Input field for project name -->
+                              <div class="form-floating mb-3">
+                                  <input type="text" name="project_name" class="form-control" id="floatingInput"
+                                      placeholder="Project Name">
+                                  <label for="floatingInput">Project Name</label>
+                              </div>
+                              <!-- Textarea for project description -->
+                              <div class="form-floating mb-3">
+                                  <textarea name="description" class="form-control"
+                                      placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                                  <label for="floatingTextarea">Description</label>
+                              </div>
+                              <!-- Hidden field for project ID -->
+                              <div class="form-floating mb-3"><input type="hidden" name="project_id"
+                                      value="<%=project._id%>"></div>
+                              <!-- Submit button -->
+                              <input class="btn btn-primary" type="submit" value="Submit">
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+              <!-- Close button for the modal -->
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+      </div>
+  </div>
+</div>

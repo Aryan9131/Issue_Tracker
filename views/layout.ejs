@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta information -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Page title -->
+  <title>Issue-Tracker</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- Font Awesome icons -->
+  <script src="https://kit.fontawesome.com/3e0734b044.js" crossorigin="anonymous"></script>
+  <!-- Custom styles -->
+  <%-style%>
+</head>
+
+<body id="body">
+  <!-- Header section -->
+  <header>
+    <section id="navbar">
+      <div class="navItems">
+        <!-- Logo and title -->
+        <h1><span><i class="fa-solid fa-bug" id="bug-symbol" style="color: #6a2a6f;"></i></span> <a href="/"
+            style="color: #6a2a6f; text-decoration: none;">Issue-Tracker</a> </h1>
+        <div id="user">
+          <!-- Display user information if logged in -->
+          <%if(locals.user){%>
+            <h5>User: <%=user.name%></h5>
+            <!-- Sign-out button -->
+            <button type="button" class="btn btn btn-outline-primary"><a href="/user/sign-out"
+                style="text-decoration: none; color: black;">Sign-out</a></button>
+          <%}else{%>
+            <!-- Sign-in button if not logged in -->
+            <button type="button" class="btn btn btn-outline-primary"><a href="/user/sign-in"
+                style="text-decoration: none; color: black;">Sign-in</a></button>
+          <%}%>
+          <!-- Button to trigger project creation modal -->
+          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Create Project
+          </button>
+          <!-- Include project creation modal -->
+          <%-include('_projectModal')-%>
+        </div>
+      </div>
+    </section>
+  </header>
+  <!-- Main content section -->
+  <main id="main-content">
+    <%-body%>
+  </main>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <!-- Custom scripts -->
+  <%-script%>
+  <!-- Footer section -->
+  <footer id="footer">
+    <p>"© 2023 Aryan. All rights reserved. Aryan's Issue Tracker - Your companion in seamless project management and
+      issue resolution."</p>
+  </footer>
+</body>
+
+</html>

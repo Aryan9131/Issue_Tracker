@@ -1,0 +1,32 @@
+<!-- Item in Each Project -->
+<li>
+  <div class="card ">
+    <div class="card-header text-center" style="background-color: rgb(205, 204, 204);">
+      Project Name :- <%=project.project_name%>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">author Name :- <%=project.author_name%>
+      </h5>
+      <p class="card-text">Description :- <%=project.description%>.</p>
+      <a href="/project/delete/<%=project._id%>" class="btn btn btn-outline-danger">Delete</a>
+      <!-- Button trigger Edit modal -->
+      <button type="button" class="btn btn btn-outline-primary" data-bs-toggle="modal"
+        data-bs-target="#projectEditModal_<%=project.id%>">
+        Edit
+      </button>
+      <!-- Modal -->
+      <%-include('_projectEditModal')-%>
+    </div>
+    <div class="card-footer text-body-secondary">
+      2 days ago
+    </div>
+  </div>
+
+  <!-- Issue Modal -->
+  <div class="project-footer-elements mt-2"><%-include('_issueModal')-%>
+      &nbsp; <button type="button" class="btn btn-outline-light" title="issues count"><i class="fa-solid fa-bug"
+          style="color: #ffc800;"></i> <b>
+          <%=project.issues.length%>
+        </b></button>
+  </div>
+</li>

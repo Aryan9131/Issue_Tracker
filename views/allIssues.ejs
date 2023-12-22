@@ -1,0 +1,83 @@
+<!-- Include stylesheets for the page -->
+<link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/allIssuePage.css">
+
+<!-- All projects And Issues Details -->
+<section class="container mt-5" id="projects-container">
+  <!-- Projects List show Issues Details of Sign in User-->
+  <div class="row" id="project-row">
+    <!-- Column for the issue list -->
+    <div class="col-8">
+      <!-- List of issues -->
+      <ul id="issue-list-container">
+        <% for(issue of allIssues){%>
+          <!-- Individual issue card -->
+          <li class="mb-3 card-li">
+            <div class="card text-center">
+              <!-- Card header with issue name -->
+              <div class="card-header" style="background-color: rgb(205, 204, 204);">
+                Issue Name :- <%=issue.issue_name%>
+              </div>
+              <div class="card-body">
+                <!-- Issue details -->
+                <p id="card-type-container" style="font-weight: bold; font-size: large;"> 
+                  <span>Issue Type :-</span> <span class="card-title"><%=issue.issue_type%></span>
+                </p>
+                <p>Project Name : <%=issue.project_id.project_name%></p>
+                <p class="card-text">Description :- <%=issue.description%>.</p>
+                <!-- Delete and Edit buttons -->
+                <a href="/project/delete-issue/<%=issue._id%>" class="btn btn-primary">Delete</a>
+                <button type="button" class="btn btn btn-outline-primary" data-bs-toggle="modal"
+                  data-bs-target="#issueEditModal_<%=issue.id%>">
+                  Edit Issue
+                </button>
+                <!-- Include modal for issue editing -->
+                <%-include('_issueEditModal')-%>
+              </div>
+              <!-- Card footer with timestamp -->
+              <div class="card-footer text-body-secondary">
+                2 days ago
+              </div>
+            </div>
+          </li>
+          <%}%>
+      </ul>
+    </div>
+    <!-- Column for the issue type filter checkboxes -->
+    <div class="col-3">
+        <!-- List of checkboxes for filtering by issue type -->
+        <ul class="list-group">
+          <li class="list-group-item">
+            <input class="form-check-input me-1" name="issueType" type="checkbox" value="Syntax Errors" id="syntaxCheckbox">
+            <label class="form-check-label" for="syntaxCheckbox">Syntax Errors</label>
+          </li>
+          <!-- Add similar checkbox items for other issue types -->
+        </li>
+        <li class="list-group-item">
+          <input class="form-check-input me-1" name="issueType" type="checkbox" value="Logical Errors" id="logicalCheckbox">
+          <label class="form-check-label" for="logicalCheckbox">Logical Errors</label>
+        </li>
+        <li class="list-group-item">
+          <input class="form-check-input me-1" name="issueType" type="checkbox" value="Runtime Errors" id="runtimeCheckbox">
+          <label class="form-check-label" for="runtimeCheckbox">Runtime Errors</label>
+        </li>
+        <li class="list-group-item">
+          <input class="form-check-input me-1" name="issueType" type="checkbox" value="Compatibility Issues" id="compatibilityCheckbox">
+          <label class="form-check-label" for="compatibilityCheckbox">Compatibility Issues</label>
+        </li>
+        <li class="list-group-item">
+          <input class="form-check-input me-1" name="issueType" type="checkbox" value="Integration Issues" id="integrationCheckbox">
+          <label class="form-check-label" for="integrationCheckbox">Integration Issues</label>
+        </li>
+        <li class="list-group-item">
+          <input class="form-check-input me-1" name="issueType" type="checkbox" value="Deployment Issues" id="integrationCheckbox">
+          <label class="form-check-label" for="integrationCheckbox">Deployment Issues</label>
+        </li>
+        </ul>
+        <!-- Button to apply the filter -->
+        <div id="apply-filter-btn" class="mt-2"><button type="submit" class="btn btn-success">Apply</button></div>
+    </div>
+  </div>
+  <!-- Include JavaScript file for filtering issues -->
+  <script src="/js/filterIssues.js"></script>
+</section>

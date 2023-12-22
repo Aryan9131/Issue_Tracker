@@ -1,0 +1,37 @@
+<!-- Include stylesheets for the page -->
+<link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/signIn.css">
+
+<!-- Container for the sign-in form -->
+<div class="container" id="sign-in-form-container">
+    <!-- Row for the heading -->
+    <div class="row">
+        <div class="col-12">
+            <h3>Sign In</h3>
+        </div>
+    </div>
+    <!-- Row for the sign-in form -->
+    <div class="row" id="sign-in-form-row">
+        <!-- Column for the form items -->
+        <div class="col-md-8" id="sign-up-items">
+            <!-- Sign-in form -->
+            <form action="/user/create-session" method="POST">
+                <!-- Email input field -->
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <!-- Password input field -->
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <!-- Link to the sign-up page -->
+            <div id="sign-in-link"><a href="/user/sign-up" class="btn btn-secondary mt-3">Sign-up</a></div>
+        </div>
+    </div>
+</div>
