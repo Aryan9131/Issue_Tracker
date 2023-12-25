@@ -57,7 +57,7 @@ app.use(session({
         maxAge: (1000 * 60 * 100) // Session timeout duration
     },
     store: MongoStore.create({
-        mongoUrl: `mongodb://127.0.0.1:27017/${env.db}`,
+        mongoUrl: `mongodb+srv://aryannayak9131:AhGzJJtziaZKPCYo@cluster0.luuffqt.mongodb.net/${env.db}?retryWrites=true&w=majority`,
         autoRemove: 'disable'
     })
 }));
