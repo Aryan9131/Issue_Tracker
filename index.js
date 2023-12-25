@@ -76,6 +76,6 @@ app.listen(PORT, (err) => {
         console.log("Error while running Server: ", err);
         return;
     }
-    console.log(env.session_secret_key)
+    console.log(env.session_secret_key +" "+env.db+" "+env.assests_path+" "+env.name);
     console.log('Server is running at Port:', PORT +"  "+process.env.ISSUE_TRACKER_ENVIRONMENT);
 });
