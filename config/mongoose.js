@@ -2,8 +2,11 @@ const mongoose=require('mongoose');
 const env=require('./environment');
 let db;
 async function main(){
-    db=await mongoose.connect(`mongodb+srv://aryannayak9131:AhGzJJtziaZKPCYo@cluster0.luuffqt.mongodb.net/${env.db}?retryWrites=true&w=majority`,{useNewUrlParser: true,
-      useUnifiedTopology: true})
+    // mongoose.js and environment.js
+    db = await mongoose.connect(`mongodb+srv://${env.dbUser}:${env.dbPassword}@cluster0.luuffqt.mongodb.net/${env.db}?retryWrites=true&w=majority`, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+           });
 } 
  
 main().then(()=>{
