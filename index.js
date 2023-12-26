@@ -14,7 +14,7 @@ const path = require('path');
 
 // Create an instance of the Express application
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 // Middleware for parsing incoming request data
 app.use(express.urlencoded());
