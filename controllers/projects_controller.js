@@ -134,7 +134,7 @@ module.exports.updateIssue = async function (req, res) {
 // Controller function for retrieving all issues
 module.exports.allIssues = async function (req, res) {
     // Fetching all issues and populating the associated project details
-    const allIssues = await Issue.find().populate('project_id');
+    const allIssues = await Issue.findById({user: req.user.id}).populate('project_id');
 
     // Checking if issues are successfully retrieved
     if (allIssues) {
