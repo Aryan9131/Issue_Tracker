@@ -18,19 +18,19 @@
                               <!-- Input field for author name -->
                               <div class="form-floating mb-3">
                                   <input type="text" name="author_name" class="form-control" id="floatingInput"
-                                      placeholder="Author Name">
+                                      placeholder="Author Name" value="<%= project.author_name %>">
                                   <label for="floatingInput">Author Name</label>
                               </div>
                               <!-- Input field for project name -->
                               <div class="form-floating mb-3">
                                   <input type="text" name="project_name" class="form-control" id="floatingInput"
-                                      placeholder="Project Name">
+                                      placeholder="Project Name" value="<%= project.project_name %>">
                                   <label for="floatingInput">Project Name</label>
                               </div>
                               <!-- Textarea for project description -->
                               <div class="form-floating mb-3">
                                   <textarea name="description" class="form-control"
-                                      placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                                      placeholder="Leave a comment here" id="floatingTextarea"><%= project.description %></textarea>
                                   <label for="floatingTextarea">Description</label>
                               </div>
                               <!-- Hidden field for project ID -->
